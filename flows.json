@@ -1,0 +1,597 @@
+[
+    {
+        "id": "d4a4cb15dd1769d1",
+        "type": "tab",
+        "label": "Proyecto",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5233a33ffa2b550e",
+        "type": "serial in",
+        "z": "d4a4cb15dd1769d1",
+        "name": "Serial",
+        "serial": "986c6ac3b5cb44d9",
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "a15320825e66b681",
+                "e60c48101bee4234"
+            ]
+        ]
+    },
+    {
+        "id": "e60c48101bee4234",
+        "type": "debug",
+        "z": "d4a4cb15dd1769d1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 310,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "a15320825e66b681",
+        "type": "switch",
+        "z": "d4a4cb15dd1769d1",
+        "name": "Sistemas",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "TV Principal",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "TV Dormitorio",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "AC Principal",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "AC Dormitorio",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "Alarma",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "Cantidad de Agua",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "Alerta Incendio",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 7,
+        "x": 300,
+        "y": 260,
+        "wires": [
+            [
+                "f8642ba3912aa6d8"
+            ],
+            [
+                "3efa5ff792535048"
+            ],
+            [
+                "e13afbe1d97b2dce"
+            ],
+            [
+                "f2db81867bf58b4f"
+            ],
+            [
+                "70d94a34ad373a6e"
+            ],
+            [
+                "246a76be5072c1aa"
+            ],
+            [
+                "0d1bab679d4cd6bf"
+            ]
+        ]
+    },
+    {
+        "id": "f8642ba3912aa6d8",
+        "type": "split",
+        "z": "d4a4cb15dd1769d1",
+        "name": "TV Principal",
+        "splt": "TV Principal",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 590,
+        "y": 100,
+        "wires": [
+            [
+                "e84eb43132c8fb7d"
+            ]
+        ]
+    },
+    {
+        "id": "3efa5ff792535048",
+        "type": "split",
+        "z": "d4a4cb15dd1769d1",
+        "name": "TV Dormitorio",
+        "splt": "TV Dormitorio",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 600,
+        "y": 160,
+        "wires": [
+            [
+                "a882023824964975"
+            ]
+        ]
+    },
+    {
+        "id": "246a76be5072c1aa",
+        "type": "split",
+        "z": "d4a4cb15dd1769d1",
+        "name": "Cisterna",
+        "splt": "Cantidad de Agua",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 580,
+        "y": 400,
+        "wires": [
+            [
+                "1bd6715a545ffdf5"
+            ]
+        ]
+    },
+    {
+        "id": "f2db81867bf58b4f",
+        "type": "split",
+        "z": "d4a4cb15dd1769d1",
+        "name": "AC Dormitorio",
+        "splt": "AC Dormitorio",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 600,
+        "y": 280,
+        "wires": [
+            [
+                "e94901e5ae266629"
+            ]
+        ]
+    },
+    {
+        "id": "e13afbe1d97b2dce",
+        "type": "split",
+        "z": "d4a4cb15dd1769d1",
+        "name": "AC Principal",
+        "splt": "AC Principal",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 590,
+        "y": 220,
+        "wires": [
+            [
+                "d3a34f403e21d546"
+            ]
+        ]
+    },
+    {
+        "id": "e84eb43132c8fb7d",
+        "type": "ui_text",
+        "z": "d4a4cb15dd1769d1",
+        "group": "68d11ed903aa858b",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "TV Principal",
+        "label": "TV Principal",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 830,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "a882023824964975",
+        "type": "ui_text",
+        "z": "d4a4cb15dd1769d1",
+        "group": "68d11ed903aa858b",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Tv Dormitorio",
+        "label": "Tv Dormitorio",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 840,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "0fb76e30fa3bed59",
+        "type": "ui_text",
+        "z": "d4a4cb15dd1769d1",
+        "group": "47a0c61ecb346575",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Alarma",
+        "label": "Alarma",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 820,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "1bd6715a545ffdf5",
+        "type": "ui_gauge",
+        "z": "d4a4cb15dd1769d1",
+        "name": "Litros de agua",
+        "group": "61d6c1e380962842",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "wave",
+        "title": "Litros de agua",
+        "label": "Litros",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#c03030"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 840,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e94901e5ae266629",
+        "type": "ui_text",
+        "z": "d4a4cb15dd1769d1",
+        "group": "3ce91ecdd6837f01",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "AC Dormitorio",
+        "label": "AC Dormitorio",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 840,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "d3a34f403e21d546",
+        "type": "ui_text",
+        "z": "d4a4cb15dd1769d1",
+        "group": "3ce91ecdd6837f01",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "AC Principal",
+        "label": "AC Principal",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 830,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "70d94a34ad373a6e",
+        "type": "split",
+        "z": "d4a4cb15dd1769d1",
+        "name": "Alarma",
+        "splt": "Alarma",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 580,
+        "y": 340,
+        "wires": [
+            [
+                "0fb76e30fa3bed59"
+            ]
+        ]
+    },
+    {
+        "id": "0d1bab679d4cd6bf",
+        "type": "split",
+        "z": "d4a4cb15dd1769d1",
+        "name": "Alerta Incendio",
+        "splt": "Alerta Incendio",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 600,
+        "y": 460,
+        "wires": [
+            [
+                "e463d0ddabe36698",
+                "e66fa3c461be768b",
+                "10fe5150ed0ef799"
+            ]
+        ]
+    },
+    {
+        "id": "e66fa3c461be768b",
+        "type": "ui_text",
+        "z": "d4a4cb15dd1769d1",
+        "group": "47a0c61ecb346575",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Alerta Incendio",
+        "label": "Alerta Incendio",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 840,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "10fe5150ed0ef799",
+        "type": "ui_toast",
+        "z": "d4a4cb15dd1769d1",
+        "position": "top right",
+        "displayTime": "5",
+        "highlight": "Blue",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "topic": "",
+        "name": "Alerta Incendio",
+        "x": 840,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "e463d0ddabe36698",
+        "type": "ui_audio",
+        "z": "d4a4cb15dd1769d1",
+        "name": "Alerta Incendio",
+        "group": "47a0c61ecb346575",
+        "voice": "Microsoft Helena - Spanish (Spain)",
+        "always": "",
+        "x": 840,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "1f882fac80edcc0c",
+        "type": "comment",
+        "z": "d4a4cb15dd1769d1",
+        "name": "Proyecto",
+        "info": "",
+        "x": 100,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "1c1b4ed936c75313",
+        "type": "ui_spacer",
+        "z": "d4a4cb15dd1769d1",
+        "name": "spacer",
+        "group": "9b33719d32e170ae",
+        "order": 2,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "c949326d6fd11979",
+        "type": "ui_spacer",
+        "z": "d4a4cb15dd1769d1",
+        "name": "spacer",
+        "group": "9b33719d32e170ae",
+        "order": 3,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2673ac4644a0949c",
+        "type": "ui_spacer",
+        "z": "d4a4cb15dd1769d1",
+        "name": "spacer",
+        "group": "9b33719d32e170ae",
+        "order": 5,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "e5dad8062b11ee80",
+        "type": "ui_spacer",
+        "z": "d4a4cb15dd1769d1",
+        "name": "spacer",
+        "group": "9b33719d32e170ae",
+        "order": 7,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "bba59aba5954934e",
+        "type": "ui_spacer",
+        "z": "d4a4cb15dd1769d1",
+        "name": "spacer",
+        "group": "9b33719d32e170ae",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "163b06dc1c0f122f",
+        "type": "ui_spacer",
+        "z": "d4a4cb15dd1769d1",
+        "name": "spacer",
+        "group": "9b33719d32e170ae",
+        "order": 10,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "5c37b77f01776672",
+        "type": "ui_spacer",
+        "z": "d4a4cb15dd1769d1",
+        "name": "spacer",
+        "group": "9b33719d32e170ae",
+        "order": 12,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "2fde55848d589e0c",
+        "type": "ui_spacer",
+        "z": "d4a4cb15dd1769d1",
+        "name": "spacer",
+        "group": "9b33719d32e170ae",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e649c96a0f448f1b",
+        "type": "ui_spacer",
+        "z": "d4a4cb15dd1769d1",
+        "name": "spacer",
+        "group": "9b33719d32e170ae",
+        "order": 15,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "10c0e1293a2d9aea",
+        "type": "ui_spacer",
+        "z": "d4a4cb15dd1769d1",
+        "name": "spacer",
+        "group": "9b33719d32e170ae",
+        "order": 17,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "6893e687b49e0982",
+        "type": "ui_spacer",
+        "z": "d4a4cb15dd1769d1",
+        "name": "spacer",
+        "group": "9b33719d32e170ae",
+        "order": 18,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "d61d3b5271200d6c",
+        "type": "ui_spacer",
+        "z": "d4a4cb15dd1769d1",
+        "name": "spacer",
+        "group": "9b33719d32e170ae",
+        "order": 20,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "986c6ac3b5cb44d9",
+        "type": "serial-port",
+        "serialport": "COM22",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "68d11ed903aa858b",
+        "type": "ui_group",
+        "name": "Sistema de Entretenimiento",
+        "tab": "bdd9aeb30bcd8f32",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "47a0c61ecb346575",
+        "type": "ui_group",
+        "name": "Sistema de Seguridad",
+        "tab": "bdd9aeb30bcd8f32",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "61d6c1e380962842",
+        "type": "ui_group",
+        "name": "Sistema de Control de Cisterna",
+        "tab": "bdd9aeb30bcd8f32",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "3ce91ecdd6837f01",
+        "type": "ui_group",
+        "name": "Sistema de Aire Acondicionado",
+        "tab": "bdd9aeb30bcd8f32",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "bdd9aeb30bcd8f32",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
